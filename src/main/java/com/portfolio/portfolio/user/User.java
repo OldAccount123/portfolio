@@ -1,8 +1,12 @@
 package com.portfolio.portfolio.user;
 
+import java.util.Map;
+
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.portfolio.portfolio.admin.Coin;
 
 @Document
 public class User {

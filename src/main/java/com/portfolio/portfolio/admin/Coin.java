@@ -1,4 +1,4 @@
-package com.portfolio.portfolio.price;
+package com.portfolio.portfolio.admin;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
