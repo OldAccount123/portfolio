@@ -25,4 +25,8 @@ public class UserService {
 	public Mono<User> findByEmail(String email) {
 		return userRepository.findByEmail(email);
 	}
+
+	public Mono<User> findByConfirmationToken(String token) {
+		return userRepository.findByConfirmationToken(token);
+	}
 }
