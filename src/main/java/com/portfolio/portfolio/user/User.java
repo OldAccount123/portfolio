@@ -1,22 +1,21 @@
 package com.portfolio.portfolio.user;
 
-import java.util.Map;
-
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.portfolio.portfolio.admin.Coin;
 import com.portfolio.portfolio.price.Portfolio;
 
 @Document
 public class User {
 	@Id
 	private ObjectId id;
-	private String login;
+	private String username;
 	private String password;
 	private String email;
 	private Portfolio portfolio;
+	private boolean enabled;
+	private String confirmationToken;
 
 	public User() {
 
@@ -24,16 +23,25 @@ public class User {
 
 	public User(String login, String email) {
 		super();
-		this.login = login;
+		this.username = login;
 		this.email = email;
 	}
 
-	public String getLogin() {
-		return login;
+	
+	public boolean isEnabled() {
+		return enabled;
 	}
 
-	public void setLogin(String login) {
-		this.login = login;
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String login) {
+		this.username = login;
 	}
 
 	public String getEmail() {
@@ -59,5 +67,15 @@ public class User {
 	public void setPortfolio(Portfolio portfolio) {
 		this.portfolio = portfolio;
 	}
+
+	public String getConfirmationToken() {
+		return confirmationToken;
+	}
+
+	public void setConfirmationToken(String confirmationToken) {
+		this.confirmationToken = confirmationToken;
+	}
+	
+	
 
 }
